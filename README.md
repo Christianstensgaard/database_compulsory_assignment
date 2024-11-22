@@ -5,22 +5,23 @@
 
 
 # 1. Getting Started
-|Technology Stack Recommendation
-|Component	                  Database Type	      Example Database	                Rationale
-|-----------------------------------------------------------------------------------------------------------------------------------------
-|Books and Authors	          ,Relational	        ,PostgreSQL	                      ,Structured schema, advanced querying.
-|Customers and Orders	        ,Relational	        ,MySQL	                            ,ACID compliance for order integrity.
-|Inventory Management	        ,NoSQL	              ,Redis	                            ,Low-latency, high write performance.
+| Component               | Database Type | Example Database | Rationale                                   |
+|-------------------------|---------------|------------------|---------------------------------------------|
+| Books and Authors       | Relational    | PostgreSQL       | Structured schema, advanced querying.       |
+| Customers and Orders    | Relational    | MySQL            | ACID compliance for order integrity.        |
+| Inventory Management    | NoSQL         | Redis            | Low-latency, high write performance.        |
 
 
 
-|Component	                  |Cache Type	        |What to Cache	                    |Invalidation  Strategy
-|-----------------------------------------------------------------------------------------------------------------------------------------
-|Books and Authors	          |Redis/Memcached	    |Book metadata,                    |search results	On update, or time-based expiration
-|Customers and Orders	        |Redis	              |Sessions, recent orders	          |TTL for sessions, update on new order
-|Inventory Management	        |Redis	              |Stock levels for reads	          |Immediate invalidation on update
-|Recommendations	            |Redis	              |Recommendations, search results	  |Periodic refresh or TTL
-|Homepage Content	            |Redis/CDN	          |Static data, banners	            |On content change or periodic refresh
+
+| Component               | Cache Type      | What to Cache                       | Invalidation Strategy                     |
+|-------------------------|-----------------|--------------------------------------|------------------------------------------|
+| Books and Authors       | Redis/Memcached | Book metadata, search results       | On update, or time-based expiration       |
+| Customers and Orders    | Redis           | Sessions, recent orders             | TTL for sessions, update on new order     |
+| Inventory Management    | Redis           | Stock levels for reads              | Immediate invalidation on update          |
+| Recommendations         | Redis           | Recommendations, search results     | Periodic refresh or TTL                   |
+| Homepage Content        | Redis/CDN       | Static data, banners                | On content change or periodic refresh     |
+
 
 
 
