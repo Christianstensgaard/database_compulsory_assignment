@@ -60,6 +60,7 @@ Updating inventory levels.
 Retrieving cached data when appropriate.
 Project Setup and Delivery:
 
+# Documentation
 **Use a GitHub repository for your project**.
 Ensure each team member's contributions are visible through commit history.
 
