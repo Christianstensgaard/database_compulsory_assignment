@@ -12,6 +12,7 @@
 | Inventory Management    | NoSQL           | Redis                               | Low-latency, high write performance.      |
 
 
+|-----------------------------------------------------------------------------------------------------------------------------|
 
 
 | Component               | Cache Type      | What to Cache                       | Invalidation Strategy                     |
