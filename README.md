@@ -8,9 +8,9 @@
 |Technology Stack Recommendation
 |Component	                  Database Type	      Example Database	                Rationale
 |-----------------------------------------------------------------------------------------------------------------------------------------
-|Books and Authors	          |Relational	        |PostgreSQL	                      |Structured schema, advanced querying.
-|Customers and Orders	        |Relational	        |MySQL	                            |ACID compliance for order integrity.
-|Inventory Management	        |NoSQL	              |Redis	                            |Low-latency, high write performance.
+|Books and Authors	          ,Relational	        ,PostgreSQL	                      ,Structured schema, advanced querying.
+|Customers and Orders	        ,Relational	        ,MySQL	                            ,ACID compliance for order integrity.
+|Inventory Management	        ,NoSQL	              ,Redis	                            ,Low-latency, high write performance.
 
 
 
