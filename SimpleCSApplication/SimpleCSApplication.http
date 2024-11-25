@@ -1,0 +1,6 @@
+@SimpleCSApplication_HostAddress = http://localhost:5016
+
+GET {{SimpleCSApplication_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
