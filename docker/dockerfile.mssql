@@ -1,0 +1,9 @@
+FROM mcr.microsoft.com/mssql/server:2019-latest
+
+ENV MSQL_SA_PASSWORD="Password123!"
+ENV MSQL_INSTANCE_NAME="mssql-server"
+ENV MSQL_ACCEPT_EULA="y"
+
+RUN [MSIXSetup.exe] /quiet /acceptEula /configure
+
+RUN sqlcmd -S $(MSSQL_SERVER) -Q "CREATE DATABASE bookstoredb"

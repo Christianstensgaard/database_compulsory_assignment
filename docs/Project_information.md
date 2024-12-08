@@ -34,3 +34,6 @@ For example, book details might be read frequently but updated rarely, whereas i
 - Documentation of your database design choices (in your README file).
 - Your ability to implement methods for interacting with both a relational database and a NoSQL database, that adhere to the design choices you made.
 - Your ability to implement caching strategies when appropriate.
+
+
+[return](/README.md)

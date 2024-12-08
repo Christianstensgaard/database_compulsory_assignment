@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\git\\database_compulsory_assignment\\SimpleCSApplication\\SimpleCSApplication.csproj": {}
+    "c:\\git\\database_compulsory_assignment\\SimpleCSApplication\\SimpleCSApplication.csproj": {}
   },
   "projects": {
-    "C:\\git\\database_compulsory_assignment\\SimpleCSApplication\\SimpleCSApplication.csproj": {
+    "c:\\git\\database_compulsory_assignment\\SimpleCSApplication\\SimpleCSApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\git\\database_compulsory_assignment\\SimpleCSApplication\\SimpleCSApplication.csproj",
+        "projectUniqueName": "c:\\git\\database_compulsory_assignment\\SimpleCSApplication\\SimpleCSApplication.csproj",
         "projectName": "SimpleCSApplication",
-        "projectPath": "C:\\git\\database_compulsory_assignment\\SimpleCSApplication\\SimpleCSApplication.csproj",
+        "projectPath": "c:\\git\\database_compulsory_assignment\\SimpleCSApplication\\SimpleCSApplication.csproj",
         "packagesPath": "C:\\Users\\Chalo\\.nuget\\packages\\",
-        "outputPath": "C:\\git\\database_compulsory_assignment\\SimpleCSApplication\\obj\\",
+        "outputPath": "c:\\git\\database_compulsory_assignment\\SimpleCSApplication\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Chalo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -49,6 +49,26 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.11, )"
+            },
+            "MongoDB.Bson": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "MongoGogo": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[9.1.0, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.8.22, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

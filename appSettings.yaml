@@ -1,0 +1,8 @@
+mongo_db:
+  - database_name: Bookstore
+  - connectionString: mongodb://root:rootpassword@localhost:27017
+mysql:
+  - database_name: Bookstore
+  - connectionString: null
+
+  

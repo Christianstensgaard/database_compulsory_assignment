@@ -1,3 +1,7 @@
+using MongoDB.Bson;
+using MongoDB.Driver;
+using SimpleCSApplication.Routes;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -16,29 +20,30 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast")
-.WithOpenApi();
+BookManagement.Endpoints(app);
+CustomerManagement.Endpoints(app);
+InventoryManagement.Endpoints(app);
+OrderProcessing.Endpoints(app);
 
 app.Run();
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
+IMongoDatabase database;
+IMongoCollection<BsonDocument> collection;
+
+
+// Connect to MongoDB (local instance or cloud)
+var client = new MongoClient("mongodb://root:rootpassword@localhost:27017"); // Change the connection string accordingly
+database = client.GetDatabase("Bookstore"); // Replace with your database name
+collection = database.GetCollection<BsonDocument>("Books"); // Replace with your collection name
+
+// Create a new document to insert
+var document = new BsonDocument
 {
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
+    { "name", "John Doe" },
+    { "age", 30 },
+    { "email", "johndoe@example.com" }
+};
+
+// Insert the document into the collection
+collection.InsertOne(document);
+Console.WriteLine("Document inserted!");
