@@ -4,45 +4,44 @@ namespace SimpleCSApplication.Routes;
 public static class BookManagement{
   public static void Endpoints(this WebApplication app)
   {
-    // Get all books by a specific author
-    app.MapGet("/books/author/{author}", (string author) =>
-    {
-      return Results.Ok("Hello!");
+    //- Create new book
+    app.MapPost("/books/create/{quantity:int}", (BookModel model, int quantity) =>{
+      if(!BookModel.CreateBook(model, quantity))
+        return Results.NotFound("Failed to create book");
+      return Results.Ok("Book created");
     })
-    .WithName("GetBooksByAuthor")
-    .WithDescription("Getting all books by a specific author")
+    .WithDescription("Creates a new book, and store the information in Mysql, and Description in MongoDb")
+    .WithName("CreateBook")
     .WithOpenApi();
 
-    // Get details of a book by ID
-    app.MapGet("/books/{id:int}", (int id) =>
-    {
-      return Results.Ok("Hello!");
-    })
-    .WithName("GetBookDetails")
-    .WithDescription("Get book details by book id")
-    .WithOpenApi();
+    app.MapGet("/books/all", ()=>{
 
-    app.MapPost("/books/create/author", (AuthorModel model)=>{
-      if(AuthorModel.CreateAuthor(model)){
-        return Results.Ok();
-      } else return Results.Problem();
+      var books = BookModel.GetAllBooks();
+      if(books.Count > 0)
+        return Results.Ok(books);
+      else return Results.NotFound("Could not find any books!");
     })
-    .WithDescription("Create author")
-    .WithName("CreateAuthor")
+    .WithName("GetAllBooks")
+    .WithDescription("Getting all books")
     .WithOpenApi();
 
 
-    app.MapGet("/books/get/all/authors", ()=>{
-      List<AuthorModel>? models = AuthorModel.GetAllAuthors();
-      if (models == null || models.Count == 0)
-      {
-          return Results.NotFound("No authors found.");
-      }
-      return Results.Ok(models);
+    app.MapGet("/books/isbn/{ISBN}", (string ISBN)=>{
+      return Results.Ok(BookModel.GetBookByISBN(ISBN));
     })
-    .WithName("GetAllAuthors")
-    .WithDescription("Returning all authors in the database")
+    .WithDescription("Get book with ISBN")
+    .WithName("GetBookWithISBN")
     .WithOpenApi();
 
+
+    app.MapGet("/books/author/{author}", (string author)=>{
+      AuthorModel model = AuthorModel.GetAuthor(author);
+      if(model == null)
+        return Results.NotFound("Failed to find author");
+      return Results.Ok(BookModel.GetBooksByAuthor(model));
+    })
+    .WithDescription("Getting all Books by a given author")
+    .WithName("GetBooksByAuthors")
+    .WithOpenApi();
   }
 }

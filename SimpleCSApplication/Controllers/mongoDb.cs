@@ -12,14 +12,12 @@ public class MongoDb{
   public bool Connected(){
     try
     {
-        // Try to list databases to check connection
-        var databases = database.Client.ListDatabases().ToList();
-        return true; // Connection is fine
+      var databases = database.Client.ListDatabases().ToList();
+      return true;
     }
     catch (Exception ex)
     {
-        // Handle exceptions, like network issues or incorrect credentials
-        return false; // Connection failed
+      return false;
     }
   }
 
@@ -29,5 +27,5 @@ public class MongoDb{
   }
   readonly IMongoDatabase database;
   const string Database_name = "Bookstore";
-  const string ConnectionString = "mongodb://root:rootpassword@localhost:27017";
+  const string ConnectionString = "mongodb://root:rootpassword@mongo:27017";
 }

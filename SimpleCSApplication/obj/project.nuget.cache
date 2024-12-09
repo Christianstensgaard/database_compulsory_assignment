@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5o4k7pRN1RM=",
+  "dgSpecHash": "Bra5RB2OTSU=",
   "success": true,
-  "projectFilePath": "c:\\git\\database_compulsory_assignment\\SimpleCSApplication\\SimpleCSApplication.csproj",
+  "projectFilePath": "C:\\git\\database_compulsory_assignment\\SimpleCSApplication\\SimpleCSApplication.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Chalo\\.nuget\\packages\\bouncycastle.cryptography\\2.3.1\\bouncycastle.cryptography.2.3.1.nupkg.sha512",
     "C:\\Users\\Chalo\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",

@@ -11,7 +11,7 @@ services:
     ports:
       - "3306:3306"
     networks:
-      - backend
+      - db_net
 
   mongo:
     image: mongo:latest
@@ -22,7 +22,7 @@ services:
     ports:
       - "27017:27017"
     networks:
-      - backend
+      - db_net
 
   redis:
     image: redis:latest
@@ -30,8 +30,25 @@ services:
     ports:
       - "6379:6379"
     networks:
-      - backend
+      - db_net
+
+  api:
+    build:
+      context: .
+      dockerfile: ./SimpleCSApplication/Dockerfile
+    container_name: simplecsapp
+    ports:
+      - "8080:8080"
+    networks:
+      - db_net
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+
+    depends_on:
+      - mysql
+      - mongo
+      - redis
 
 networks:
-  backend:
+  db_net:
     driver: bridge

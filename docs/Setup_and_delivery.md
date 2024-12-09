@@ -1,10 +1,12 @@
 # Project Setup and Delivery:
 
-1. Use a GitHub repository for your project.
-2. Ensure each team member's contributions are visible through commit history.
-# Include a README file that:
-1. Briefly explains your design choices for using the relational database, NoSQL store, and caching.
-2. Provides instructions on how to set up and run the application.
+## Docker-compose
+I have created a docker-compose for the Redis, MongoDB and MySQL. Since I chose MySQL the script will automatically be run, and the table are ready to go.
+-	I have created some dummy data to be used, but the reference to the object id in MongoDB is null for they do not exist
+
+
+## C# Api application
+I’ve created docker-compose with the API, using the Swagger, to easy test the different calls, so all you need to do is run the docker-compose up command, and it should work.
 
 
 [return](/README.md)

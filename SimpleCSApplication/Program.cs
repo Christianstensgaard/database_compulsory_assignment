@@ -1,5 +1,3 @@
-using MongoDB.Bson;
-using MongoDB.Driver;
 using SimpleCSApplication.Routes;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,26 +22,12 @@ BookManagement.Endpoints(app);
 CustomerManagement.Endpoints(app);
 InventoryManagement.Endpoints(app);
 OrderProcessing.Endpoints(app);
+AuthorManagement.Endpoints(app);
+
+app.MapGet("/", context =>
+{
+    context.Response.Redirect("/swagger");
+    return Task.CompletedTask;
+});
 
 app.Run();
-
-IMongoDatabase database;
-IMongoCollection<BsonDocument> collection;
-
-
-// Connect to MongoDB (local instance or cloud)
-var client = new MongoClient("mongodb://root:rootpassword@localhost:27017"); // Change the connection string accordingly
-database = client.GetDatabase("Bookstore"); // Replace with your database name
-collection = database.GetCollection<BsonDocument>("Books"); // Replace with your collection name
-
-// Create a new document to insert
-var document = new BsonDocument
-{
-    { "name", "John Doe" },
-    { "age", 30 },
-    { "email", "johndoe@example.com" }
-};
-
-// Insert the document into the collection
-collection.InsertOne(document);
-Console.WriteLine("Document inserted!");

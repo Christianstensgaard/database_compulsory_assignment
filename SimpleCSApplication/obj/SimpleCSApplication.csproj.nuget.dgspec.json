@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\git\\database_compulsory_assignment\\SimpleCSApplication\\SimpleCSApplication.csproj": {}
+    "C:\\git\\database_compulsory_assignment\\SimpleCSApplication\\SimpleCSApplication.csproj": {}
   },
   "projects": {
-    "c:\\git\\database_compulsory_assignment\\SimpleCSApplication\\SimpleCSApplication.csproj": {
+    "C:\\git\\database_compulsory_assignment\\SimpleCSApplication\\SimpleCSApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\git\\database_compulsory_assignment\\SimpleCSApplication\\SimpleCSApplication.csproj",
+        "projectUniqueName": "C:\\git\\database_compulsory_assignment\\SimpleCSApplication\\SimpleCSApplication.csproj",
         "projectName": "SimpleCSApplication",
-        "projectPath": "c:\\git\\database_compulsory_assignment\\SimpleCSApplication\\SimpleCSApplication.csproj",
+        "projectPath": "C:\\git\\database_compulsory_assignment\\SimpleCSApplication\\SimpleCSApplication.csproj",
         "packagesPath": "C:\\Users\\Chalo\\.nuget\\packages\\",
-        "outputPath": "c:\\git\\database_compulsory_assignment\\SimpleCSApplication\\obj\\",
+        "outputPath": "C:\\git\\database_compulsory_assignment\\SimpleCSApplication\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Chalo\\AppData\\Roaming\\NuGet\\NuGet.Config",
